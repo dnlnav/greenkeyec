@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: '.env',
+});
 /**
  * Configure your Gatsby site with this file.
  *
@@ -13,9 +16,17 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-html-attributes",
+      resolve: 'gatsby-plugin-html-attributes',
       options: {
-        lang: "zxx",
+        lang: 'zxx',
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `seut6m50hfii`,
+        accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
   ],
