@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `seut6m50hfii`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_PREVIEW__ACCESS_TOKEN,
         downloadLocal: true,
         host: `preview.contentful.com`,
