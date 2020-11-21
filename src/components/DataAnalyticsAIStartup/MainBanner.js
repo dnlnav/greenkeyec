@@ -62,11 +62,7 @@ const MainBanner = () => {
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <p>
-                    World leading reliable research & AI based Data Analytics
-                    solutions for Big Data companies and consumer business
-                    products. Drive your success without stress!
-                  </p>
+                  <p>{module.description}</p>
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInRight">

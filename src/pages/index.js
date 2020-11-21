@@ -2,35 +2,28 @@ import React from 'react';
 import Navbar from '../components/App/Navbar';
 import Footer from '../components/App/Footer';
 import Layout from '../components/App/Layout';
-import Banner from '../components/Index/Banner.js';
-import OurSolutions from '../components/Index/OurSolutions';
-import OurServices from '../components/Index/OurServices';
-import OurFeatures from '../components/Index/OurFeatures';
-import TeamMember from '../components/Index/TeamMember';
-import RecentProjects from '../components/Index/RecentProjects';
-import Pricing from '../components/Index/Pricing';
-import Testimonials from '../components/Index/Testimonials';
-import Partner from '../components/Index/Partner';
-import ProjectStartArea from '../components/Index/ProjectStartArea';
-import OurBlog from '../components/Index/OurBlog';
+
 import MainBanner from '../components/DataAnalyticsAIStartup/MainBanner';
+import FeaturedService from '../components/DataAnalyticsAIStartup/FeaturedService';
+import AboutUsContent from '../components/AboutUs/AboutUsContent';
+import WeServe from '../components/BigDataAnalysisStartup/WeServe';
+import OurMission from '../components/DataAnalyticsAIStartup/OurMission';
+import Funfacts from '../components/DataAnalyticsAIStartup/Funfacts';
+import HowItWork from '../components/DataAnalyticsAIStartup/HowItWork';
+import StartProject from '../components/DataAnalyticsAIStartup/StartProject';
 
 const Home = () => {
   return (
     <Layout>
       <Navbar />
       <MainBanner />
-      <Banner />
-      <OurSolutions />
-      <OurServices />
-      <OurFeatures />
-      <TeamMember />
-      <RecentProjects />
-      <Pricing />
-      <Testimonials />
-      <Partner />
-      <OurBlog />
-      <ProjectStartArea />
+      <FeaturedService />
+      <AboutUsContent />
+      <WeServe />
+      <OurMission />
+      <Funfacts />
+      <HowItWork />
+      <StartProject />
       <Footer />
     </Layout>
   );
