@@ -25,19 +25,25 @@ const MainBanner = () => {
   };
 
   const {
-    contentfulPage: {
-      modules: [module],
+    allContentfulPagina: {
+      nodes: [
+        {
+          modules: [module],
+        },
+      ],
     },
   } = useStaticQuery(graphql`
     query {
-      contentfulPage {
-        modules {
-          title
-          description {
-            json
+      allContentfulPagina {
+        nodes {
+          modules {
+            title
+            contentful_id
+            spaceId
+            description {
+              json
+            }
           }
-          ctaText
-          ctaLink
         }
       }
     }
@@ -63,7 +69,9 @@ const MainBanner = () => {
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <div>{documentToReactComponents(module.description.json)}</div>
+                  <div>
+                    {documentToReactComponents(module.description.json)}
+                  </div>
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInRight">
