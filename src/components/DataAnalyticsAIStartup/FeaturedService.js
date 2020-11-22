@@ -7,7 +7,7 @@ import shape2 from '../../assets/images/services/service-shape2.png'
 
 const FeaturedService = () => {
     return (
-        <div className="boxes-area pb-70">
+        <div className="boxes-area">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4 col-md-6 col-sm-6">

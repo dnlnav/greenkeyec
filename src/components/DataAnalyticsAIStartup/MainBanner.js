@@ -2,6 +2,7 @@ import React from 'react';
 import ReactWOW from 'react-wow';
 import ModalVideo from 'react-modal-video';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import img1 from '../../assets/images/main-banner/banner-two/banner-two-shape1.png';
 import img2 from '../../assets/images/main-banner/banner-two/banner-two-shape2.png';
@@ -62,7 +63,7 @@ const MainBanner = () => {
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <p>{module.description}</p>
+                  <div>{documentToReactComponents(module.description.json)}</div>
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInRight">
@@ -70,16 +71,6 @@ const MainBanner = () => {
                     <Link to="/about-us" className="default-btn">
                       <i className="flaticon-right"></i>
                       About Us <span></span>
-                    </Link>
-
-                    <Link
-                      to="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        openModal();
-                      }}
-                      className="video-btn popup-youtube">
-                      <i className="flaticon-google-play"></i> Watch Video
                     </Link>
                   </div>
                 </ReactWOW>
