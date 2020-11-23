@@ -2,28 +2,61 @@ import React from 'react';
 import Navbar from '../components/App/Navbar';
 import Footer from '../components/App/Footer';
 import Layout from '../components/App/Layout';
-
-import MainBanner from '../components/DataAnalyticsAIStartup/MainBanner';
-import FeaturedService from '../components/DataAnalyticsAIStartup/FeaturedService';
-import AboutUsContent from '../components/AboutUs/AboutUsContent';
-import WeServe from '../components/BigDataAnalysisStartup/WeServe';
-import OurMission from '../components/DataAnalyticsAIStartup/OurMission';
-import Funfacts from '../components/DataAnalyticsAIStartup/Funfacts';
-import HowItWork from '../components/DataAnalyticsAIStartup/HowItWork';
-import StartProject from '../components/DataAnalyticsAIStartup/StartProject';
+import { useStaticQuery, graphql } from 'gatsby';
+import moduleMapping from '../utils/moduleMapping';
 
 const Home = () => {
+  const {
+    contentfulPagina: { modules: contentModules },
+  } = useStaticQuery(graphql`
+    query {
+      contentfulPagina {
+        name
+        modules {
+          ... on ContentfulHomeBanner {
+            id
+            title
+            ctaLink
+            ctaText
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+          }
+          ... on ContentfulServicios {
+            id
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            cards {
+              ctaLink
+              ctaText
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+  
+  console.log({ contentModules });
+  
+  const modules = contentModules.map(moduleMapping);
+  console.log({ modules });
+  
   return (
     <Layout>
       <Navbar />
-      <MainBanner />
-      <FeaturedService />
-      <AboutUsContent />
-      <WeServe />
-      <OurMission />
-      <Funfacts />
-      <HowItWork />
-      <StartProject />
+      {modules.map(([Module, moduleConfig]) => (
+        <Module key={moduleConfig.id} {...moduleConfig}/>
+      ))}
       <Footer />
     </Layout>
   );

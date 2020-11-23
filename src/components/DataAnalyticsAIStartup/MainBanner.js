@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactWOW from 'react-wow';
 import ModalVideo from 'react-modal-video';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import img1 from '../../assets/images/main-banner/banner-two/banner-two-shape1.png';
@@ -24,31 +24,6 @@ const MainBanner = () => {
     setIsOpen(!isOpen);
   };
 
-  const {
-    allContentfulPagina: {
-      nodes: [
-        {
-          modules: [module],
-        },
-      ],
-    },
-  } = useStaticQuery(graphql`
-    query {
-      allContentfulPagina {
-        nodes {
-          modules {
-            title
-            contentful_id
-            spaceId
-            description {
-              json
-            }
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <React.Fragment>
       {/* If you want to change the video need to update videoID */}
@@ -65,12 +40,12 @@ const MainBanner = () => {
             <div className="col-lg-5 col-md-12">
               <div className="banner-content">
                 <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <h1>{module.title}</h1>
+                  <h1>module.title</h1>
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInLeft">
                   <div>
-                    {documentToReactComponents(module.description.json)}
+                    documentToReactComponents(module.description.json)
                   </div>
                 </ReactWOW>
 
