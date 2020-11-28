@@ -18,7 +18,7 @@ import img11 from '../../assets/images/main-banner/banner-two/banner-two-shape11
 import img12 from '../../assets/images/main-banner/banner-two/banner-two-shape12.png';
 import img13 from '../../assets/images/main-banner/banner-two/banner-two-main-img.png';
 
-const MainBanner = () => {
+const MainBanner = ({ title, description, ctaLink, ctaText, image }) => {
   const [isOpen, setIsOpen] = React.useState(true);
   const openModal = () => {
     setIsOpen(!isOpen);
@@ -26,34 +26,24 @@ const MainBanner = () => {
 
   return (
     <React.Fragment>
-      {/* If you want to change the video need to update videoID */}
-      <ModalVideo
-        channel="youtube"
-        isOpen={!isOpen}
-        videoId="bk7McNUjWgw"
-        onClose={() => setIsOpen(!isOpen)}
-      />
-
       <div className="banner-section">
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-5 col-md-12">
               <div className="banner-content">
                 <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <h1>module.title</h1>
+                  <h1>{title}</h1>
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <div>
-                    documentToReactComponents(module.description.json)
-                  </div>
+                  <div>{documentToReactComponents(description.json)}</div>
                 </ReactWOW>
 
                 <ReactWOW delay=".1s" animation="fadeInRight">
                   <div className="btn-box">
-                    <Link to="/about-us" className="default-btn">
+                    <Link to={ctaLink} className="default-btn">
                       <i className="flaticon-right"></i>
-                      About Us <span></span>
+                      {ctaText}
                     </Link>
                   </div>
                 </ReactWOW>
@@ -61,46 +51,56 @@ const MainBanner = () => {
             </div>
 
             <div className="col-lg-7 col-md-12">
-              <div className="banner-animation-image">
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img1} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img2} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img3} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img4} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInUp">
-                  <img src={img5} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img6} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img7} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img8} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img9} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img10} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInDown">
-                  <img src={img11} alt="banner" />
-                </ReactWOW>
-                <ReactWOW delay=".1s" animation="fadeInLeft">
-                  <img src={img12} alt="banner" />
-                </ReactWOW>
-
-                <img src={img13} alt="banner" />
-              </div>
+              {!!image ? (
+                <div className="banner-animation-image">
+                  <img
+                    className="custom-banner-image"
+                    src={image.fluid.src}
+                    alt={image.title}
+                  />
+                  <div />
+                </div>
+              ) : (
+                <div className="banner-animation-image">
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img1} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img2} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img3} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img4} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInUp">
+                    <img src={img5} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img6} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img7} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img8} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img9} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img10} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInDown">
+                    <img src={img11} alt="banner" />
+                  </ReactWOW>
+                  <ReactWOW delay=".1s" animation="fadeInLeft">
+                    <img src={img12} alt="banner" />
+                  </ReactWOW>
+                  <img src={img13} alt="banner" />
+                </div>
+              )}
             </div>
           </div>
         </div>

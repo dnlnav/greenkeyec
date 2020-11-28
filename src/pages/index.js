@@ -5,6 +5,15 @@ import Layout from '../components/App/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 import moduleMapping from '../utils/moduleMapping';
 
+import MainBanner from '../components/DataAnalyticsAIStartup/MainBanner';
+import FeaturedService from '../components/DataAnalyticsAIStartup/FeaturedService';
+import AboutUsContent from '../components/AboutUs/AboutUsContent';
+import WeServe from '../components/BigDataAnalysisStartup/WeServe';
+import OurMission from '../components/DataAnalyticsAIStartup/OurMission';
+import Funfacts from '../components/DataAnalyticsAIStartup/Funfacts';
+import HowItWork from '../components/DataAnalyticsAIStartup/HowItWork';
+import StartProject from '../components/DataAnalyticsAIStartup/StartProject';
+
 const Home = () => {
   const {
     contentfulPagina: { modules: contentModules },
@@ -16,6 +25,9 @@ const Home = () => {
           ... on ContentfulHomeBanner {
             id
             title
+            description {
+              json
+            }
             ctaLink
             ctaText
             sys {
@@ -24,6 +36,12 @@ const Home = () => {
                   id
                 }
               }
+            }
+            image {
+              fluid {
+                src
+              }
+              title
             }
           }
           ... on ContentfulServicios {
@@ -39,24 +57,36 @@ const Home = () => {
               ctaLink
               ctaText
               title
+              icon {
+                fluid {
+                  src
+                }
+              }
+              description {
+                json
+              }
             }
           }
         }
       }
     }
   `);
-  
-  console.log({ contentModules });
-  
+
   const modules = contentModules.map(moduleMapping);
   console.log({ modules });
-  
+
   return (
     <Layout>
       <Navbar />
       {modules.map(([Module, moduleConfig]) => (
-        <Module key={moduleConfig.id} {...moduleConfig}/>
+        <Module key={moduleConfig.id} {...moduleConfig} />
       ))}
+      <AboutUsContent />
+      <WeServe />
+      <OurMission />
+      <Funfacts />
+      <HowItWork />
+      <StartProject />
       <Footer />
     </Layout>
   );
