@@ -69,6 +69,13 @@ const Home = () => {
             }
           }
           ... on ContentfulQuienesSomos {
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
             columnas {
               description {
                 json
@@ -213,12 +220,6 @@ const Home = () => {
       {modules.map(([Module, moduleConfig]) => (
         <Module key={moduleConfig.id} {...moduleConfig} />
       ))}
-      <AboutUsContent />
-      <WeServe />
-      <OurMission />
-      <Funfacts />
-      <HowItWork />
-      <StartProject />
       <Footer logo={logo} />
     </Layout>
   );

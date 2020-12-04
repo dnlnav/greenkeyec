@@ -9,7 +9,13 @@ import StartProject from '../components/DataAnalyticsAIStartup/StartProject';
 
 const MODULE_MAPPING = {
   homeBanner: MainBanner,
-  services: FeaturedService
+  services: FeaturedService,
+  aboutUs: AboutUsContent,
+  industriesWeServe: WeServe,
+  oportunities: OurMission,
+  funFacts: Funfacts,
+  methodology: HowItWork,
+  contactUs: StartProject,
 };
 
 const moduleMapping = (module) => {
