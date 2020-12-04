@@ -5,8 +5,6 @@ import Layout from '../components/App/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 import moduleMapping from '../utils/moduleMapping';
 
-import MainBanner from '../components/DataAnalyticsAIStartup/MainBanner';
-import FeaturedService from '../components/DataAnalyticsAIStartup/FeaturedService';
 import AboutUsContent from '../components/AboutUs/AboutUsContent';
 import WeServe from '../components/BigDataAnalysisStartup/WeServe';
 import OurMission from '../components/DataAnalyticsAIStartup/OurMission';
@@ -16,14 +14,18 @@ import StartProject from '../components/DataAnalyticsAIStartup/StartProject';
 
 const Home = () => {
   const {
-    contentfulPagina: { modules: contentModules },
+    contentfulPagina: {
+      modules: contentModules,
+      logo: {
+        fluid: { src: logo },
+      },
+    },
   } = useStaticQuery(graphql`
     query {
       contentfulPagina {
         name
         modules {
           ... on ContentfulHomeBanner {
-            id
             title
             description {
               json
@@ -45,7 +47,6 @@ const Home = () => {
             }
           }
           ... on ContentfulServicios {
-            id
             sys {
               contentType {
                 sys {
@@ -58,7 +59,7 @@ const Home = () => {
               ctaText
               title
               icon {
-                fluid {
+                fluid(maxHeight: 52) {
                   src
                 }
               }
@@ -67,17 +68,148 @@ const Home = () => {
               }
             }
           }
+          ... on ContentfulQuienesSomos {
+            columnas {
+              description {
+                json
+              }
+              title
+              list
+            }
+          }
+          ... on ContentfulAQuienesEstaDirigido {
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            title
+            description {
+              json
+            }
+          }
+          ... on ContentfulOportunidadesYBeneficios {
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            buttonLink
+            buttonText
+            image {
+              fluid {
+                src
+              }
+            }
+            endDescription {
+              json
+            }
+            startDescription {
+              json
+            }
+            list
+            title
+          }
+          ... on ContentfulFunFacts {
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            items {
+              name
+              icon {
+                fluid {
+                  src
+                }
+                description
+              }
+            }
+          }
+          ... on ContentfulMetodologia {
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            image {
+              fluid {
+                src
+              }
+            }
+            description {
+              json
+            }
+            title
+            items {
+              name
+              description
+              icon {
+                fluid {
+                  src
+                }
+              }
+            }
+          }
+          ... on ContentfulContactanos {
+            sys {
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            title
+            description {
+              json
+            }
+            image {
+              fluid {
+                src
+              }
+            }
+            button {
+              iconName
+              link
+              nombre
+            }
+          }
+        }
+        logo {
+          fluid {
+            src
+          }
+        }
+        footer {
+          linkedInLink
+          instagramLink
+          facebookLink
+          description {
+            json
+          }
+          infoList {
+            nombre
+            link
+            iconName
+          }
         }
       }
     }
   `);
 
   const modules = contentModules.map(moduleMapping);
-  console.log({ modules });
 
   return (
     <Layout>
-      <Navbar />
+      <Navbar logo={logo} />
       {modules.map(([Module, moduleConfig]) => (
         <Module key={moduleConfig.id} {...moduleConfig} />
       ))}
@@ -87,7 +219,7 @@ const Home = () => {
       <Funfacts />
       <HowItWork />
       <StartProject />
-      <Footer />
+      <Footer logo={logo} />
     </Layout>
   );
 };

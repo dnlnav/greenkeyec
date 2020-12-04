@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import logo from '../../assets/images/logo.png';
 import footerMap from '../../assets/images/footer-map.png';
 
-const Footer = () => {
+const Footer = ({ logo }) => {
   const currentYear = new Date().getFullYear();
 
   return (

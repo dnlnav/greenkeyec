@@ -73,7 +73,7 @@ $font-family: "Nunito", sans-serif;
 $main-color: #73c088;
 $white-color: #ffffff;
 $black-color: #235d3c;
-$optional-color: #6b6b84;
+$optional-color: #737374;
 $font-size: 17px;
 $transition: 0.5s;
 
@@ -1331,7 +1331,7 @@ Main Banner Area CSS
     repeat: no-repeat;
   }
   padding: {
-    top: 365px;
+    top: 200px;
     bottom: 350px;
   }
   .container-fluid {
@@ -11592,7 +11592,7 @@ Footer Area CSS
         height: 30px;
         text-align: center;
         color: $white-color;
-        background-color: #6b6b84;
+        background-color: $optional-color;
         font-size: 18px;
         position: relative;
         border-radius: 2px;
