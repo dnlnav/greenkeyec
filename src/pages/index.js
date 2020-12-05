@@ -12,6 +12,7 @@ const Home = () => {
       logo: {
         fluid: { src: logo },
       },
+      footer,
     },
   } = useStaticQuery(graphql`
     query {
@@ -213,7 +214,7 @@ const Home = () => {
       {modules.map(([Module, moduleConfig]) => (
         <Module key={moduleConfig.id} {...moduleConfig} />
       ))}
-      <Footer logo={logo} />
+      <Footer logo={logo} {...footer} />
     </Layout>
   );
 };

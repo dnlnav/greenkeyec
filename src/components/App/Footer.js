@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import footerMap from '../../assets/images/footer-map.png';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const Footer = ({ logo }) => {
+const Footer = ({
+  logo,
+  linkedInLink,
+  instagramLink,
+  facebookLink,
+  description,
+  infoList,
+}) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -14,16 +22,12 @@ const Footer = ({ logo }) => {
               <a href="/" className="logo">
                 <img src={logo} alt="logo" />
               </a>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                suspendisse.
-              </p>
+              <p>{documentToReactComponents(description.json)}</p>
 
               <ul className="social-link">
                 <li>
                   <Link
-                    to="#"
+                    to={facebookLink}
                     className="d-block"
                     target="_blank"
                     rel="noreferrer">
@@ -32,16 +36,7 @@ const Footer = ({ logo }) => {
                 </li>
                 <li>
                   <Link
-                    to="#"
-                    className="d-block"
-                    target="_blank"
-                    rel="noreferrer">
-                    <i className="bx bxl-twitter"></i>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="#"
+                    to={instagramLink}
                     className="d-block"
                     target="_blank"
                     rel="noreferrer">
@@ -50,7 +45,7 @@ const Footer = ({ logo }) => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to={linkedInLink}
                     className="d-block"
                     target="_blank"
                     rel="noreferrer">
@@ -61,25 +56,15 @@ const Footer = ({ logo }) => {
             </div>
           </div>
 
-          <div className="col-lg-4 offset-lg-4 col-sm-6">
+          <div className="col-lg-3 offset-lg-5 col-sm-6">
             <div className="single-footer-widget">
               <ul className="footer-contact-info">
-                <li>
-                  <i className="bx bx-map"></i>
-                  175 5th Ave, New York, NY 10010, <br /> United States
-                </li>
-                <li>
-                  <i className="bx bx-phone-call"></i>
-                  <a href="tel:+44587154756">+1 (123) 456 7890</a>
-                </li>
-                <li>
-                  <i className="bx bx-envelope"></i>
-                  <a href="mailto:hello@rewy.com">hello@rewy.com</a>
-                </li>
-                <li>
-                  <i className="bx bxs-inbox"></i>
-                  <a href="tel:+557854578964">+55 785 4578964</a>
-                </li>
+                {infoList.map(({ nombre, link, iconName }) => (
+                  <li>
+                    <i className={`bx bx-${iconName} bxl-${iconName}`}></i>
+                    <a href={link}>{nombre}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
