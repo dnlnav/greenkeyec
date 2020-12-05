@@ -5,13 +5,6 @@ import Layout from '../components/App/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 import moduleMapping from '../utils/moduleMapping';
 
-import AboutUsContent from '../components/AboutUs/AboutUsContent';
-import WeServe from '../components/BigDataAnalysisStartup/WeServe';
-import OurMission from '../components/DataAnalyticsAIStartup/OurMission';
-import Funfacts from '../components/DataAnalyticsAIStartup/Funfacts';
-import HowItWork from '../components/DataAnalyticsAIStartup/HowItWork';
-import StartProject from '../components/DataAnalyticsAIStartup/StartProject';
-
 const Home = () => {
   const {
     contentfulPagina: {
@@ -135,8 +128,8 @@ const Home = () => {
                 fluid {
                   src
                 }
-                description
               }
+              description
             }
           }
           ... on ContentfulMetodologia {
@@ -191,7 +184,7 @@ const Home = () => {
           }
         }
         logo {
-          fluid {
+          fluid(maxHeight: 52) {
             src
           }
         }
