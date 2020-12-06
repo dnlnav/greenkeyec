@@ -10,8 +10,12 @@ const Footer = ({
   facebookLink,
   description,
   infoList,
+  copyright,
 }) => {
-  const currentYear = new Date().getFullYear();
+  console.log({
+    copyright,
+    json: documentToReactComponents(description.json),
+  });
 
   return (
     <footer className="footer-area bg-color">
@@ -22,7 +26,7 @@ const Footer = ({
               <a href="/" className="logo">
                 <img src={logo} alt="logo" />
               </a>
-              <p>{documentToReactComponents(description.json)}</p>
+              <div>{documentToReactComponents(description.json)}</div>
 
               <ul className="social-link">
                 <li>
@@ -60,7 +64,7 @@ const Footer = ({
             <div className="single-footer-widget">
               <ul className="footer-contact-info">
                 {infoList.map(({ nombre, link, iconName }) => (
-                  <li>
+                  <li key={nombre}>
                     <i className={`bx bx-${iconName} bxl-${iconName}`}></i>
                     <a href={link}>{nombre}</a>
                   </li>
@@ -73,16 +77,22 @@ const Footer = ({
         <div className="footer-bottom-area">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-6">
-              <p>
-                Copyright @{currentYear} <strong>Rewy</strong> All rights
-                reserved{' '}
-                <a
-                  target="_blank"
-                  href="https://envytheme.com/"
-                  rel="noreferrer">
-                  EnvyTheme
-                </a>
-              </p>
+              <div>
+                {!!copyright.json ? (
+                  <span>{documentToReactComponents(copyright.json)} </span>
+                ) : (
+                  ''
+                )}
+                <span>
+                  Powered by{' '}
+                  <a
+                    target="_blank"
+                    href="https://dnlnav.dev/"
+                    rel="noreferrer">
+                    <strong>DnlNav</strong>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>

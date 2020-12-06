@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactWOW from 'react-wow';
-import ModalVideo from 'react-modal-video';
-import { Link, useStaticQuery } from 'gatsby';
+import { Link
+ } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import img1 from '../../assets/images/main-banner/banner-two/banner-two-shape1.png';
@@ -19,11 +19,6 @@ import img12 from '../../assets/images/main-banner/banner-two/banner-two-shape12
 import img13 from '../../assets/images/main-banner/banner-two/banner-two-main-img.png';
 
 const MainBanner = ({ title, description, ctaLink, ctaText, image }) => {
-  const [isOpen, setIsOpen] = React.useState(true);
-  const openModal = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <React.Fragment>
       <div className="banner-section">

@@ -193,6 +193,9 @@ const Home = () => {
           linkedInLink
           instagramLink
           facebookLink
+          copyright {
+            json
+          }
           description {
             json
           }
