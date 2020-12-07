@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import shape2 from '../../assets/images/services/service-shape2.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const FeaturedService = ({ cards }) => {
+const FeaturedService = ({ cards, linkId }) => {
   return (
-    <div className="boxes-area">
+    <div id={linkId} className="boxes-area">
       <div className="container">
         <div className="row">
           {cards.map(({ ctaLink, ctaText, description, title, icon }) => (
@@ -15,14 +14,14 @@ const FeaturedService = ({ cards }) => {
                   <img src={icon.fluid.src} alt="banner" />
                 </div>
                 <h3>
-                  <Link to="/service-details">{title}</Link>
+                  <a href="/service-details">{title}</a>
                 </h3>
                 <div>{documentToReactComponents(description.json)}</div>
 
-                <Link to={ctaLink} className="default-btn">
+                <a href={ctaLink} className="default-btn">
                   <i className="flaticon-right"></i>
                   {ctaText}
-                </Link>
+                </a>
 
                 <div className="shape1">
                   <img src={shape2} alt="banner" />

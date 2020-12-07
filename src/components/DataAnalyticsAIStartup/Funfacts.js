@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Funfacts = ({ items }) => {
+const Funfacts = ({ items, linkId }) => {
   return (
-    <div className="funfacts-area pb-70">
+    <div id={linkId} className="funfacts-area pb-70">
       <div className="container">
         <div className="row">
           {items.map(

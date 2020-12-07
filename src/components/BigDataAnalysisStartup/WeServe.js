@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import VectorShape11 from '../../assets/images/shape/vector-shape11.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const WeServe = ({ title, description, itemList }) => {
+const WeServe = ({ title, description, itemList, linkId }) => {
   return (
-    <section className="industries-serve-area bg-fafafb pt-100 pb-70">
+    <section
+      id={linkId}
+      className="industries-serve-area bg-fafafb pt-100 pb-70">
       <div className="container">
         <div className="section-title">
           <h2>{title}</h2>

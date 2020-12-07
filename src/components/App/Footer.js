@@ -12,11 +12,6 @@ const Footer = ({
   infoList,
   copyright,
 }) => {
-  console.log({
-    copyright,
-    json: documentToReactComponents(description.json),
-  });
-
   return (
     <footer className="footer-area bg-color">
       <div className="container">

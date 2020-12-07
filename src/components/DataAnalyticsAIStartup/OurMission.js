@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import shape1 from '../../assets/images/our-mission/our-mission-shape1.png';
 import shape2 from '../../assets/images/our-mission/our-mission-shape2.png';
 import mission1 from '../../assets/images/our-mission/our-mission1.png';
@@ -15,9 +14,10 @@ const OurMission = ({
   startDescription,
   list,
   title,
+  linkId,
 }) => {
   return (
-    <section className="our-mission-area ptb-100">
+    <section id={linkId} className="our-mission-area ptb-100">
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-12">
@@ -35,10 +35,10 @@ const OurMission = ({
                   ))}
                 </ul>
                 <p>{documentToReactComponents(endDescription.json)}</p>
-                <Link to={buttonLink} className="default-btn">
+                <a href={buttonLink} className="default-btn">
                   <i className="flaticon-right"></i>
                   {buttonText}
-                </Link>
+                </a>
               </div>
             </div>
           </div>

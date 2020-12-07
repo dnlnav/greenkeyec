@@ -4,6 +4,7 @@ import Footer from '../components/App/Footer';
 import Layout from '../components/App/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 import moduleMapping from '../utils/moduleMapping';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const {
@@ -12,7 +13,11 @@ const Home = () => {
       logo: {
         fluid: { src: logo },
       },
+      favicon: {
+        fluid: { src: favicon },
+      },
       footer,
+      name,
     },
   } = useStaticQuery(graphql`
     query {
@@ -21,6 +26,7 @@ const Home = () => {
         modules {
           ... on ContentfulHomeBanner {
             title
+            linkId
             description {
               json
             }
@@ -41,6 +47,7 @@ const Home = () => {
             }
           }
           ... on ContentfulServicios {
+            linkId
             sys {
               contentType {
                 sys {
@@ -63,6 +70,7 @@ const Home = () => {
             }
           }
           ... on ContentfulQuienesSomos {
+            linkId
             sys {
               contentType {
                 sys {
@@ -79,6 +87,7 @@ const Home = () => {
             }
           }
           ... on ContentfulAQuienesEstaDirigido {
+            linkId
             sys {
               contentType {
                 sys {
@@ -97,6 +106,7 @@ const Home = () => {
             }
           }
           ... on ContentfulOportunidadesYBeneficios {
+            linkId
             sys {
               contentType {
                 sys {
@@ -121,6 +131,7 @@ const Home = () => {
             title
           }
           ... on ContentfulFunFacts {
+            linkId
             sys {
               contentType {
                 sys {
@@ -139,6 +150,7 @@ const Home = () => {
             }
           }
           ... on ContentfulMetodologia {
+            linkId
             sys {
               contentType {
                 sys {
@@ -166,6 +178,7 @@ const Home = () => {
             }
           }
           ... on ContentfulContactanos {
+            linkId
             sys {
               contentType {
                 sys {
@@ -190,7 +203,12 @@ const Home = () => {
           }
         }
         logo {
-          fluid(maxHeight: 52) {
+          fluid {
+            src
+          }
+        }
+        favicon {
+          fluid(toFormat: PNG, maxWidth: 32, maxHeight: 32) {
             src
           }
         }
@@ -218,6 +236,10 @@ const Home = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{name}</title>
+        <link rel="icon" type="image/png" href={favicon}></link>
+      </Helmet>
       <Navbar logo={logo} />
       {modules.map(([Module, moduleConfig]) => (
         <Module key={moduleConfig.id} {...moduleConfig} />

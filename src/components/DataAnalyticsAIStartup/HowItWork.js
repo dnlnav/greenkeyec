@@ -9,9 +9,10 @@ const HowItWork = ({
   description,
   title,
   items,
+  linkId,
 }) => {
   return (
-    <section className="process-area ptb-100 bg-fafafb">
+    <section id={linkId} className="process-area ptb-100 bg-fafafb">
       <div className="container">
         <div className="section-title">
           <h2>{title}</h2>
