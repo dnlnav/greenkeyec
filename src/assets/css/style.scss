@@ -1405,66 +1405,6 @@ Main Banner Area CSS
 
   img {
     position: absolute;
-
-    &:nth-child(1) {
-      top: -180px;
-      left: 45px;
-    }
-    &:nth-child(2) {
-      bottom: -80px;
-      left: 270px;
-    }
-    &:nth-child(3) {
-      right: 0;
-      bottom: 85px;
-    }
-    &:nth-child(4) {
-      right: 0;
-      bottom: -90px;
-    }
-    &:nth-child(5) {
-      right: 40px;
-      bottom: -15px;
-      z-index: 1;
-    }
-    &:nth-child(6) {
-      left: 0;
-      bottom: 25px;
-    }
-    &:nth-child(7) {
-      top: -120px;
-      left: -50px;
-      z-index: 1;
-    }
-    &:nth-child(8) {
-      top: -245px;
-      left: 150px;
-      z-index: 1;
-    }
-    &:nth-child(9) {
-      left: 200px;
-      right: 0;
-      margin: auto;
-      top: -150px;
-    }
-    &:nth-child(10) {
-      right: 0;
-      top: -255px;
-    }
-    &:nth-child(11) {
-      left: 60px;
-      bottom: -130px;
-    }
-    &:nth-child(12) {
-      left: 0;
-      right: 0;
-      margin: auto;
-      top: -50px;
-      max-width: 70%;
-    }
-    &:last-child {
-      display: none;
-    }
   }
 }
 .custom-banner-image.custom-banner-image.custom-banner-image {
