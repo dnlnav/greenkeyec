@@ -90,6 +90,11 @@ const Home = () => {
             description {
               json
             }
+            itemList {
+              iconName
+              nombre
+              link
+            }
           }
           ... on ContentfulOportunidadesYBeneficios {
             sys {
