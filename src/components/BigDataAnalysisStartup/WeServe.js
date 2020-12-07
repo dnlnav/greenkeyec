@@ -21,7 +21,7 @@ const WeServe = ({ title, description, itemList, linkId }) => {
             <div className="col-lg-3 col-sm-6 col-md-6">
               <div className="single-industries-serve-box">
                 <div className="icon">
-                  <i className="flaticon-factory"></i>
+                  <i className={iconName}></i>
                 </div>
                 {nombre}
                 <a href={link} className="link-btn"></a>
@@ -37,5 +37,4 @@ const WeServe = ({ title, description, itemList, linkId }) => {
     </section>
   );
 };
-
 export default WeServe;
