@@ -7,9 +7,7 @@ const StartProject = ({
   title,
   description,
   linkId,
-  image: {
-    fluid: { src: image },
-  },
+  image,
   button: { iconName, link, nombre },
 }) => {
   return (
@@ -18,7 +16,10 @@ const StartProject = ({
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-12">
             <div className="project-start-image">
-              <img src={image || start1} alt="banner" />
+              <img
+                src={image?.fluid?.src ?? start1}
+                alt={image?.title ?? 'Imagen'}
+              />
             </div>
           </div>
 

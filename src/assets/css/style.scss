@@ -2401,6 +2401,8 @@ Our Mission Area CSS
       }
     }
     .our-mission-list {
+      display: flex;
+      flex-wrap: wrap;
       padding-left: 0;
       list-style-type: none;
       overflow: hidden;
@@ -2425,6 +2427,9 @@ Our Mission Area CSS
         border-radius: 5px;
         z-index: 1;
         background-color: $white-color;
+        display: flex;
+        align-items: center;
+
         font: {
           size: 19px;
           weight: 800;
@@ -11634,7 +11639,8 @@ Footer Area CSS
         color: $black-color;
       }
     }
-    strong, b {
+    strong,
+    b {
       color: $black-color;
     }
   }

@@ -7,9 +7,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 const OurMission = ({
   buttonLink,
   buttonText,
-  image: {
-    fluid: { src: image },
-  },
+  image,
   endDescription,
   startDescription,
   list,
@@ -45,7 +43,10 @@ const OurMission = ({
 
           <div className="col-lg-6 col-md-12">
             <div className="our-mission-image">
-              <img src={image || mission1} alt="banner" />
+              <img
+                src={image?.fluid?.src ?? mission1}
+                alt={image?.title ?? 'Imagen'}
+              />
               <div className="shape">
                 <img src={shape1} alt="banner" />
               </div>

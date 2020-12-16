@@ -24,7 +24,7 @@ const WeServe = ({ title, description, itemList, linkId }) => {
                   <i className={iconName}></i>
                 </div>
                 {nombre}
-                <a href={link} className="link-btn"></a>
+                <a href={link} className="link-btn" aria-label={nombre}></a>
               </div>
             </div>
           ))}
