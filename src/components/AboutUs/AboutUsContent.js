@@ -12,7 +12,7 @@ const AboutUsContent = ({ columnas, linkId }) => {
       <div className="container">
         <div className="row">
           {columnas.map(({ title, list, description }) => (
-            <div key={title} className="col-lg-4 col-md-6 col-sm-6">
+            <div key={title} className="col-lg-6 col-md-6 col-sm-6">
               <div className="about-text">
                 <h3>{title}</h3>
                 <p>{documentToReactComponents(description.json)}</p>

@@ -139,6 +139,7 @@ const Home = () => {
                 }
               }
             }
+            title
             items {
               name
               icon {

@@ -18,7 +18,7 @@ const OurMission = ({
     <section id={linkId} className="our-mission-area ptb-100">
       <div className="container-fluid">
         <div className="row align-items-center">
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-7 col-md-12">
             <div className="our-mission-content">
               <div className="content">
                 <h2>{title}</h2>
@@ -41,7 +41,7 @@ const OurMission = ({
             </div>
           </div>
 
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-5 col-md-12">
             <div className="our-mission-image">
               <img
                 src={image?.fluid?.src ?? mission1}

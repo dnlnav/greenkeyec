@@ -2364,7 +2364,7 @@ Our Mission Area CSS
 =================================================*/
 .our-mission-content {
   .content {
-    max-width: 585px;
+    max-width: 715px;
     margin-left: auto;
 
     .sub-title {
@@ -2431,7 +2431,7 @@ Our Mission Area CSS
         align-items: center;
 
         font: {
-          size: 19px;
+          size: 17px;
           weight: 800;
         }
         i {
@@ -2649,6 +2649,10 @@ Funfacts Area CSS
   position: relative;
   background-color: $white-color;
   transition: $transition;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 
   .icon {
     position: absolute;

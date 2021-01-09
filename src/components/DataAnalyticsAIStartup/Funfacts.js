@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Funfacts = ({ items, linkId }) => {
+const Funfacts = ({ items, title, linkId }) => {
   return (
-    <div id={linkId} className="funfacts-area pb-70">
+    <div id={linkId} className="funfacts-area pb-70 pt-100">
       <div className="container">
+        <div class="section-title">
+          <h2>{title}</h2>
+        </div>
         <div className="row">
           {items.map(
             ({
