@@ -204,7 +204,7 @@ const Home = () => {
           }
         }
         logo {
-          fluid {
+          fluid(maxHeight: 100) {
             src
           }
         }

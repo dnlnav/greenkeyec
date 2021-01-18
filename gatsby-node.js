@@ -13,6 +13,9 @@ exports.createSchemaCustomization = ({ actions }) => {
     type ContentfulContactanos implements Node {
       image: ContentfulAsset
     }
+    type ContentfulNombreConFlaticon implements Node {
+      link: String
+    }
   `;
   createTypes(typeDefs);
 };

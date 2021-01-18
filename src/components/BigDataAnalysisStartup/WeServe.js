@@ -18,7 +18,7 @@ const WeServe = ({ title, description, itemList, linkId }) => {
 
         <div className="row">
           {itemList.map(({ iconName, nombre, link }) => (
-            <div className="col-lg-3 col-sm-6 col-md-6">
+            <div className="col-lg-3 col-sm-6 col-md-6 mb-30">
               <div className="single-industries-serve-box">
                 <div className="icon">
                   <i className={iconName}></i>
