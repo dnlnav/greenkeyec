@@ -53,10 +53,10 @@ typings/
 
 # dotenv environment variable files
 .env*
+!.env.example
 
-# gatsby files
-.cache/
-public
+# next files
+.next
 
 # Mac files
 .DS_Store

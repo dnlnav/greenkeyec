@@ -1,12 +1,11 @@
 import React from 'react';
-import shape1 from '../../assets/images/shape/circle-shape1.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const AboutUsContent = ({ columnas, linkId }) => {
   return (
     <section id={linkId} className="about-area ptb-70">
       <div className="circle-shape1">
-        <img src={shape1} alt="banner" />
+        <img src="/images/shape/circle-shape1.png" alt="banner" />
       </div>
 
       <div className="container">

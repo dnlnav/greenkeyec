@@ -2,8 +2,6 @@ import React from 'react';
 import ReactWOW from 'react-wow';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import img13 from '../../assets/images/main-banner/banner-two/banner-two-main-img.png';
-
 const MainBanner = ({
   title,
   description,
@@ -46,7 +44,11 @@ const MainBanner = ({
                   alt={image.title}
                 />
               ) : (
-                <img className="custom-banner-image" src={img13} alt="banner" />
+                <img
+                  className="custom-banner-image"
+                  src="/images/main-banner/banner-two/banner-two-main-img.png"
+                  alt="banner"
+                />
               )}
             </div>
           </div>

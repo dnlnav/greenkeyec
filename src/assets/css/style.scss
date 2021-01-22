@@ -1174,7 +1174,7 @@ Main Banner Area CSS
   z-index: 1;
   background: {
     color: $white-color;
-    image: url(../images/main-banner/main-banner-bg1.png);
+    image: url(/images/main-banner/main-banner-bg1.png);
     position: bottom center;
     size: cover;
     repeat: no-repeat;
@@ -1330,7 +1330,7 @@ Main Banner Area CSS
   z-index: 1;
   background: {
     color: $white-color;
-    image: url(../images/main-banner/main-banner-bg2.png);
+    image: url(/images/main-banner/main-banner-bg2.png);
     position: bottom right;
     size: cover;
     repeat: no-repeat;
@@ -1529,7 +1529,7 @@ Main Banner Area CSS
   z-index: 1;
   background: {
     color: $white-color;
-    image: url(../images/main-banner/main-banner-bg3.png);
+    image: url(/images/main-banner/main-banner-bg3.png);
     position: bottom center;
     size: cover;
     repeat: no-repeat;
@@ -1577,10 +1577,10 @@ Main Banner Area CSS
     color: $black-color;
   }
   &.item-bg1 {
-    background-image: url(../images/main-banner/main-banner1.jpg);
+    background-image: url(/images/main-banner/main-banner1.jpg);
   }
   &.item-bg2 {
-    background-image: url(../images/main-banner/main-banner2.jpg);
+    background-image: url(/images/main-banner/main-banner2.jpg);
   }
 }
 .banner-item-content {
@@ -1725,7 +1725,7 @@ Main Banner Area CSS
   z-index: 1;
   background: {
     color: $white-color;
-    image: url(../images/main-banner/main-banner-bg4.jpg);
+    image: url(/images/main-banner/main-banner-bg4.jpg);
     position: bottom right;
     size: cover;
     repeat: no-repeat;
@@ -1881,7 +1881,7 @@ Main Banner Area CSS
   z-index: 1;
   background: {
     color: $white-color;
-    image: url(../images/banner-bg.png);
+    image: url(/images/banner-bg.png);
     position: bottom center;
     size: cover;
     repeat: no-repeat;
@@ -1897,7 +1897,7 @@ Main Banner Area CSS
 .seo-agency-banner {
   position: relative;
   z-index: 1;
-  background: transparent url(../images/banner-bg2.jpg) left top no-repeat;
+  background: transparent url(/images/banner-bg2.jpg) left top no-repeat;
   padding: {
     top: 270px;
     bottom: 150px;
@@ -2631,7 +2631,7 @@ Funfacts Area CSS
       position: center center;
       size: cover;
       repeat: no-repeat;
-      image: url(../images/funfacts/funfacts-bg.jpg);
+      image: url(/images/funfacts/funfacts-bg.jpg);
     }
     .single-funfacts-item {
       h3 {
@@ -5243,7 +5243,7 @@ Projects Area CSS
 
   &.bg-color {
     background: {
-      image: url(../images/black-bg.jpg);
+      image: url(/images/black-bg.jpg);
       position: center center;
       size: cover;
       repeat: no-repeat;
@@ -5667,7 +5667,7 @@ Scientist Area CSS
       transition: $transition;
       border-radius: 5px 5px 0 0;
       background: {
-        image: url(../images/scientist/shape1.png);
+        image: url(/images/scientist/shape1.png);
         position: center center;
         size: cover;
         repeat: no-repeat;
@@ -5742,7 +5742,7 @@ Scientist Area CSS
       .image {
         &::before {
           background: {
-            image: url(../images/scientist/shape2.png);
+            image: url(/images/scientist/shape2.png);
           }
         }
       }
@@ -9293,7 +9293,7 @@ Blog Details Area CSS
       border-radius: 5px 5px 0 0;
       background: {
         color: $main-color;
-        image: url(../images/bg.jpg);
+        image: url(/images/bg.jpg);
         position: center center;
         size: cover;
         repeat: no-repeat;
@@ -9919,7 +9919,7 @@ Page Title Area CSS
 .page-title-area {
   position: relative;
   z-index: 1;
-  background: transparent url(../images/page-title-bg.jpg) right top no-repeat;
+  background: transparent url(/images/page-title-bg.jpg) right top no-repeat;
   border-bottom: 1px solid #fafafa;
   padding: {
     top: 200px;
@@ -10193,13 +10193,13 @@ Widget Sidebar CSS
             position: center center !important;
           }
           &.bg1 {
-            background-image: url(../images/blog/blog-img9.jpg);
+            background-image: url(/images/blog/blog-img9.jpg);
           }
           &.bg2 {
-            background-image: url(../images/blog/blog-img8.jpg);
+            background-image: url(/images/blog/blog-img8.jpg);
           }
           &.bg3 {
-            background-image: url(../images/blog/blog-img7.jpg);
+            background-image: url(/images/blog/blog-img7.jpg);
           }
         }
         &::before,
@@ -10516,13 +10516,13 @@ Widget Sidebar CSS
             position: center center !important;
           }
           &.bg1 {
-            background-image: url(../images/courses/course1.jpg);
+            background-image: url(/images/courses/course1.jpg);
           }
           &.bg2 {
-            background-image: url(../images/courses/course2.jpg);
+            background-image: url(/images/courses/course2.jpg);
           }
           &.bg3 {
-            background-image: url(../images/courses/course3.jpg);
+            background-image: url(/images/courses/course3.jpg);
           }
         }
         &::before,
@@ -10860,7 +10860,7 @@ Coming Soon Area CSS
   z-index: 1;
   background: #f6f7fb;
   background: {
-    image: url(../images/coming-soon-bg.jpg);
+    image: url(/images/coming-soon-bg.jpg);
     position: top center;
     size: cover;
     repeat: no-repeat;

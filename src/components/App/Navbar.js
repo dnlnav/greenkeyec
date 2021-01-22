@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { collapsedState } from '../../utils/recoil-atoms';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 
 const Navbar = ({ logo, ctaLink, ctaText }) => {
   const [collapsed, setCollapsed] = useRecoilState(collapsedState);

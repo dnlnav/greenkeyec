@@ -1,7 +1,4 @@
 import React from 'react';
-import shape1 from '../../assets/images/our-mission/our-mission-shape1.png';
-import shape2 from '../../assets/images/our-mission/our-mission-shape2.png';
-import mission1 from '../../assets/images/our-mission/our-mission1.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const OurMission = ({
@@ -28,7 +25,10 @@ const OurMission = ({
                     <li>
                       <i className="flaticon-tick"></i>
                       {item}
-                      <img src={shape2} alt="banner" />
+                      <img
+                        src="/images/our-mission/our-mission-shape2.png"
+                        alt="banner"
+                      />
                     </li>
                   ))}
                 </ul>
@@ -44,11 +44,16 @@ const OurMission = ({
           <div className="col-lg-5 col-md-12">
             <div className="our-mission-image">
               <img
-                src={image?.fluid?.src ?? mission1}
+                src={
+                  image?.fluid?.src ?? '/images/our-mission/our-mission1.png'
+                }
                 alt={image?.title ?? 'Imagen'}
               />
               <div className="shape">
-                <img src={shape1} alt="banner" />
+                <img
+                  src="/images/our-mission/our-mission-shape1.png"
+                  alt="banner"
+                />
               </div>
             </div>
           </div>

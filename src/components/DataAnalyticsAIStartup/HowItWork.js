@@ -1,5 +1,4 @@
 import React from 'react';
-import process7 from '../../assets/images/process/process7.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const HowItWork = ({ image, description, title, items, linkId }) => {
@@ -14,7 +13,7 @@ const HowItWork = ({ image, description, title, items, linkId }) => {
           <div className="col-lg-6 col-md-12 p-0">
             <div className="process-image">
               <img
-                src={image?.fluid?.src ?? process7}
+                src={image?.fluid?.src ?? '/images/process/process7.png'}
                 alt={image?.title ?? 'Imagen'}
               />
             </div>

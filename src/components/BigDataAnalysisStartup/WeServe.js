@@ -1,6 +1,5 @@
 import React from 'react';
 
-import VectorShape11 from '../../assets/images/shape/vector-shape11.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const WeServe = ({ title, description, itemList, linkId }) => {
@@ -32,7 +31,7 @@ const WeServe = ({ title, description, itemList, linkId }) => {
       </div>
 
       <div className="vector-shape11">
-        <img src={VectorShape11} alt="Vector Shape" />
+        <img src="/images/shape/vector-shape11.png" alt="Vector Shape" />
       </div>
     </section>
   );

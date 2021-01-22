@@ -1,6 +1,4 @@
 import React from 'react';
-import start1 from '../../assets/images/project-start1.png';
-import shape3 from '../../assets/images/shape/vector-shape3.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const StartProject = ({
@@ -17,7 +15,7 @@ const StartProject = ({
           <div className="col-lg-6 col-md-12">
             <div className="project-start-image">
               <img
-                src={image?.fluid?.src ?? start1}
+                src={image?.fluid?.src ?? '/assets/images/project-start1.png'}
                 alt={image?.title ?? 'Imagen'}
               />
             </div>
@@ -38,7 +36,7 @@ const StartProject = ({
       </div>
 
       <div className="circle-shape1">
-        <img src={shape3} alt="banner" />
+        <img src="/assets/images/shape/vector-shape3.png" alt="banner" />
       </div>
     </section>
   );

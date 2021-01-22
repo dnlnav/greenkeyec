@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import footerMap from '../../assets/images/footer-map.png';
+import Link from 'next/link';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const Footer = ({
@@ -94,7 +93,7 @@ const Footer = ({
       </div>
 
       <div className="footer-map">
-        <img src={footerMap} alt="footer-logo" />
+        <img src="/images/footer-map.png" alt="footer-logo" />
       </div>
     </footer>
   );

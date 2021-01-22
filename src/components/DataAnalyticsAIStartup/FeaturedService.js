@@ -1,5 +1,4 @@
 import React from 'react';
-import shape2 from '../../assets/images/services/service-shape2.png';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const FeaturedService = ({ cards, linkId }) => {
@@ -24,7 +23,7 @@ const FeaturedService = ({ cards, linkId }) => {
                 </a>
 
                 <div className="shape1">
-                  <img src={shape2} alt="banner" />
+                  <img src="/images/services/service-shape2.png" alt="banner" />
                 </div>
               </div>
             </div>
