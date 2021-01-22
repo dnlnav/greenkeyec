@@ -11,6 +11,7 @@
     "@apollo/client": "^3.3.7",
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "dotenv": "^8.2.0",
+    "eslint": "^7.18.0",
     "eslint-config-prettier": "^6.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "graphql": "^15.4.0",
