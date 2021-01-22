@@ -2,7 +2,12 @@ import React from 'react';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const WeServe = ({ title, description, itemList, linkId }) => {
+const WeServe = ({
+  title,
+  description,
+  itemListCollection: { items: itemList },
+  linkId,
+}) => {
   return (
     <section
       id={linkId}
@@ -10,14 +15,12 @@ const WeServe = ({ title, description, itemList, linkId }) => {
       <div className="container">
         <div className="section-title">
           <h2>{title}</h2>
-          <p>
-            <span>{documentToReactComponents(description.json)}</span>
-          </p>
+          <div>{documentToReactComponents(description.json)}</div>
         </div>
 
         <div className="row">
           {itemList.map(({ iconName, nombre, link }) => (
-            <div className="col-lg-3 col-sm-6 col-md-6 mb-30">
+            <div key={nombre} className="col-lg-3 col-sm-6 col-md-6 mb-30">
               <div className="single-industries-serve-box">
                 <div className="icon">
                   <i className={iconName}></i>

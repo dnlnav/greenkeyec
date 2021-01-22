@@ -7,7 +7,7 @@ import Head from 'next/head';
 import { gql } from '@apollo/client';
 import graphqlClient from '../utils/graphqlClient';
 
-const Home = () => {
+const Home = ({ contentModules, name, logo, favicon, footer }) => {
   const modules = contentModules.map(moduleMapping);
 
   return (
@@ -17,9 +17,9 @@ const Home = () => {
         <link rel="icon" type="image/png" href={favicon}></link>
       </Head>
       <Navbar logo={logo} />
-      {modules.map(([Module, moduleConfig]) => (
-        <Module key={moduleConfig.id} {...moduleConfig} />
-      ))}
+      {modules.map(([Module, moduleConfig]) =>
+        Module ? <Module key={moduleConfig.sys.id} {...moduleConfig} /> : null
+      )}
       <Footer logo={logo} {...footer} />
     </Layout>
   );
@@ -27,14 +27,16 @@ const Home = () => {
 
 export default Home;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const {
-    page: {
-      modulesCollection: { items: contentModules },
-      logo: { url: logo },
-      favicon: { url: favicon },
-      footer,
-      name,
+    data: {
+      page: {
+        name,
+        logo: { url: logo },
+        favicon: { url: favicon },
+        footer,
+        modulesCollection: { items: contentModules },
+      },
     },
   } = await graphqlClient.query({
     query: gql`
@@ -79,6 +81,9 @@ export async function getStaticProps() {
             items {
               __typename
               ... on HomeBanner {
+                sys {
+                  id
+                }
                 title
                 linkId
                 description {
@@ -88,9 +93,28 @@ export async function getStaticProps() {
                 ctaText
                 image {
                   url
+                  title
+                }
+              }
+              ... on AboutUs {
+                sys {
+                  id
+                }
+                linkId
+                columnasCollection(limit: 20) {
+                  items {
+                    title
+                    list
+                    description {
+                      json
+                    }
+                  }
                 }
               }
               ... on Services {
+                sys {
+                  id
+                }
                 linkId
                 cardsCollection(limit: 20) {
                   items {
@@ -106,19 +130,10 @@ export async function getStaticProps() {
                   }
                 }
               }
-              ... on AboutUs {
-                linkId
-                columnasCollection(limit: 20) {
-                  items {
-                    description {
-                      json
-                    }
-                    title
-                    list
-                  }
-                }
-              }
               ... on IndustriesWeServe {
+                sys {
+                  id
+                }
                 linkId
                 title
                 description {
@@ -133,6 +148,9 @@ export async function getStaticProps() {
                 }
               }
               ... on Oportunities {
+                sys {
+                  id
+                }
                 linkId
                 buttonLink
                 buttonText
@@ -149,6 +167,9 @@ export async function getStaticProps() {
                 title
               }
               ... on FunFacts {
+                sys {
+                  id
+                }
                 linkId
                 title
                 itemsCollection(limit: 20) {
@@ -162,8 +183,12 @@ export async function getStaticProps() {
                 }
               }
               ... on Methodology {
+                sys {
+                  id
+                }
                 linkId
                 image {
+                  title
                   url
                 }
                 description {
@@ -181,6 +206,9 @@ export async function getStaticProps() {
                 }
               }
               ... on ContactUs {
+                sys {
+                  id
+                }
                 linkId
                 title
                 description {
@@ -204,7 +232,11 @@ export async function getStaticProps() {
 
   return {
     props: {
-      launches: [],
+      contentModules,
+      name,
+      logo,
+      favicon,
+      footer,
     },
   };
 }

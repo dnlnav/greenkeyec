@@ -19,10 +19,10 @@ const OurMission = ({
             <div className="our-mission-content">
               <div className="content">
                 <h2>{title}</h2>
-                <p>{documentToReactComponents(startDescription.json)}</p>
+                <div>{documentToReactComponents(startDescription.json)}</div>
                 <ul className="our-mission-list">
-                  {list.map((item) => (
-                    <li>
+                  {list.map((item, index) => (
+                    <li key={item}>
                       <i className="flaticon-tick"></i>
                       {item}
                       <img
@@ -32,7 +32,7 @@ const OurMission = ({
                     </li>
                   ))}
                 </ul>
-                <p>{documentToReactComponents(endDescription.json)}</p>
+                <div>{documentToReactComponents(endDescription.json)}</div>
                 <a href={buttonLink} className="default-btn">
                   <i className="flaticon-right"></i>
                   {buttonText}
@@ -44,9 +44,7 @@ const OurMission = ({
           <div className="col-lg-5 col-md-12">
             <div className="our-mission-image">
               <img
-                src={
-                  image?.fluid?.src ?? '/images/our-mission/our-mission1.png'
-                }
+                src={image?.url ?? '/images/our-mission/our-mission1.png'}
                 alt={image?.title ?? 'Imagen'}
               />
               <div className="shape">

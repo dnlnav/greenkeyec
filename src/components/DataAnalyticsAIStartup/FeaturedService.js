@@ -1,7 +1,7 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const FeaturedService = ({ cards, linkId }) => {
+const FeaturedService = ({ cardsCollection: { items: cards }, linkId }) => {
   return (
     <div id={linkId} className="boxes-area">
       <div className="container">
@@ -10,7 +10,7 @@ const FeaturedService = ({ cards, linkId }) => {
             <div key={title} className="col-lg-4 col-md-6 col-sm-6">
               <div className="single-boxes-item">
                 <div className="icon">
-                  <img src={icon.fluid.src} alt="banner" />
+                  <img src={icon.url} alt="banner" />
                 </div>
                 <h3>
                   <a href="/service-details">{title}</a>

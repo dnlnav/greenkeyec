@@ -1,7 +1,7 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const AboutUsContent = ({ columnas, linkId }) => {
+const AboutUsContent = ({ columnasCollection: { items: columns }, linkId }) => {
   return (
     <section id={linkId} className="about-area ptb-70">
       <div className="circle-shape1">
@@ -10,14 +10,14 @@ const AboutUsContent = ({ columnas, linkId }) => {
 
       <div className="container">
         <div className="row">
-          {columnas.map(({ title, list, description }) => (
+          {columns.map(({ title, list, description }) => (
             <div key={title} className="col-lg-6 col-md-6 col-sm-6">
               <div className="about-text">
                 <h3>{title}</h3>
-                <p>{documentToReactComponents(description.json)}</p>
+                <div>{documentToReactComponents(description.json)}</div>
                 <ul className="features-list">
                   {list.map((item) => (
-                    <li>
+                    <li key={item}>
                       <i className="flaticon-tick"></i> {item}
                     </li>
                   ))}
@@ -29,7 +29,7 @@ const AboutUsContent = ({ columnas, linkId }) => {
       </div>
 
       <div className="circle-shape1">
-        <img src={shape1} alt="banner" />
+        <img src="/images/shape/circle-shape1.png" alt="banner" />
       </div>
     </section>
   );

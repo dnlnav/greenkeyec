@@ -37,19 +37,14 @@ const MainBanner = ({
 
           <div className="col-lg-7 col-md-12">
             <div className="banner-animation-image">
-              {!!image ? (
-                <img
-                  className="custom-banner-image"
-                  src={image.fluid.src}
-                  alt={image.title}
-                />
-              ) : (
-                <img
-                  className="custom-banner-image"
-                  src="/images/main-banner/banner-two/banner-two-main-img.png"
-                  alt="banner"
-                />
-              )}
+              <img
+                className="custom-banner-image"
+                src={
+                  image?.url ??
+                  '/images/main-banner/banner-two/banner-two-main-img.png'
+                }
+                alt={image?.title ?? 'banner'}
+              />
             </div>
           </div>
         </div>

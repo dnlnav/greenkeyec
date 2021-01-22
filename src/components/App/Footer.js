@@ -8,7 +8,7 @@ const Footer = ({
   instagramLink,
   facebookLink,
   description,
-  infoList,
+  infoListCollection: { items: infoList },
   copyright,
 }) => {
   return (
@@ -25,29 +25,35 @@ const Footer = ({
               <ul className="social-link">
                 <li>
                   <Link
-                    to={facebookLink}
+                    href={facebookLink}
                     className="d-block"
                     target="_blank"
                     rel="noreferrer">
-                    <i className="bx bxl-facebook"></i>
+                    <a>
+                      <i className="bx bxl-facebook"></i>
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to={instagramLink}
+                    href={instagramLink}
                     className="d-block"
                     target="_blank"
                     rel="noreferrer">
-                    <i className="bx bxl-instagram"></i>
+                    <a>
+                      <i className="bx bxl-instagram"></i>
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to={linkedInLink}
+                    href={linkedInLink}
                     className="d-block"
                     target="_blank"
                     rel="noreferrer">
-                    <i className="bx bxl-linkedin"></i>
+                    <a>
+                      <i className="bx bxl-linkedin"></i>
+                    </a>
                   </Link>
                 </li>
               </ul>
@@ -60,7 +66,9 @@ const Footer = ({
                 {infoList.map(({ nombre, link, iconName }) => (
                   <li key={nombre}>
                     <i className={`bx bx-${iconName} bxl-${iconName}`}></i>
-                    <a href={link}>{nombre}</a>
+                    <Link href={link}>
+                      <a>{nombre}</a>
+                    </Link>
                   </li>
                 ))}
               </ul>

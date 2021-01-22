@@ -15,7 +15,7 @@ const StartProject = ({
           <div className="col-lg-6 col-md-12">
             <div className="project-start-image">
               <img
-                src={image?.fluid?.src ?? '/assets/images/project-start1.png'}
+                src={image?.url ?? '/images/project-start1.png'}
                 alt={image?.title ?? 'Imagen'}
               />
             </div>
@@ -24,7 +24,7 @@ const StartProject = ({
           <div className="col-lg-6 col-md-12">
             <div className="project-start-content">
               <h2>{title}</h2>
-              <p>{documentToReactComponents(description.json)}</p>
+              <div>{documentToReactComponents(description.json)}</div>
               <a href={link} className="default-btn">
                 <i
                   className={`bx bxl-${iconName} project-start-area__icon`}></i>{' '}
@@ -36,7 +36,7 @@ const StartProject = ({
       </div>
 
       <div className="circle-shape1">
-        <img src="/assets/images/shape/vector-shape3.png" alt="banner" />
+        <img src="/images/shape/vector-shape3.png" alt="banner" />
       </div>
     </section>
   );

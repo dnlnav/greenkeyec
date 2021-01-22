@@ -36,10 +36,12 @@ const Navbar = ({ logo, ctaLink, ctaText }) => {
           <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link
-                to="/"
+                href="/"
                 onClick={() => setCollapsed(true)}
                 className="navbar-brand">
-                <img src={logo} alt="logo" />
+                <a>
+                  <img src={logo} alt="logo" />
+                </a>
               </Link>
 
               <button
