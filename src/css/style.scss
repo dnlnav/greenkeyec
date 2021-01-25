@@ -2545,6 +2545,7 @@ Boxes Area CSS
   padding: 40px 30px 35px;
   transition: $transition;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  height: calc(100% - 30px);
 
   .icon {
     margin-bottom: 30px;
@@ -2593,6 +2594,13 @@ Boxes Area CSS
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.09);
   }
 }
+
+.single-boxes-item__text {
+  ul {
+    text-align: left;
+  }
+}
+
 .col-lg-4 {
   &:nth-child(2) {
     .single-boxes-item {

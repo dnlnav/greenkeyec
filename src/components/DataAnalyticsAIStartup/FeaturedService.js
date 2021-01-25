@@ -15,7 +15,9 @@ const FeaturedService = ({ cardsCollection: { items: cards }, linkId }) => {
                 <h3>
                   <a href="/service-details">{title}</a>
                 </h3>
-                <div>{documentToReactComponents(description.json)}</div>
+                <div className="single-boxes-item__text">
+                  {documentToReactComponents(description.json)}
+                </div>
 
                 <a href={ctaLink} className="default-btn">
                   <i className="flaticon-right"></i>
